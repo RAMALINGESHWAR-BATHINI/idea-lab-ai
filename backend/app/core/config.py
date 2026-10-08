@@ -7,10 +7,10 @@ credentials or connection strings.
 from __future__ import annotations
 
 from functools import lru_cache
-from typing import Literal
+from typing import Annotated, Literal
 
 from pydantic import Field, field_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -42,7 +42,10 @@ class Settings(BaseSettings):
     allow_registration: bool = True
 
     # ---- CORS ----
-    cors_origins: list[str] = Field(
+    # NoDecode: keep the raw string from the environment so the validator
+    # below can split the comma-separated form used in .env (pydantic-settings
+    # would otherwise try and fail to JSON-decode complex fields).
+    cors_origins: Annotated[list[str], NoDecode] = Field(
         default_factory=lambda: [
             "http://localhost:3000",
             "http://127.0.0.1:3000",
