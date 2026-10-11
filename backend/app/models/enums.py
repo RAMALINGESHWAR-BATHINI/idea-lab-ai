@@ -20,11 +20,22 @@ class AccessLevel(str, enum.Enum):
 class RoleName(str, enum.Enum):
     """Built-in role identifiers."""
 
+    # Core auth roles
     STUDENT = "student"
     FACULTY = "faculty"
     STAFF = "staff"
     IDEALAB_MEMBER = "idealab_member"
     ADMIN = "admin"
+    # Institutional IdeaLab roles
+    GLOBAL_ADMIN = "global_admin"
+    IDEALAB_ADMIN = "idealab_admin"
+    CHIEF_MENTOR = "chief_mentor"
+    FACULTY_COORDINATOR = "faculty_coordinator"
+    TECH_GURU = "tech_guru"
+    STUDENT_COORDINATOR = "student_coordinator"
+    STUDENT_AMBASSADOR = "student_ambassador"
+    CONTRIBUTOR = "contributor"
+    PUBLIC_VISITOR = "public_visitor"
 
 
 class DocumentType(str, enum.Enum):
@@ -73,3 +84,53 @@ class MessageRole(str, enum.Enum):
     ASSISTANT = "assistant"
     SYSTEM = "system"
     TOOL = "tool"
+
+
+class EventStatus(str, enum.Enum):
+    """Lifecycle state of an event."""
+
+    DRAFT = "draft"
+    PENDING_REVIEW = "pending_review"
+    PUBLISHED = "published"
+    ONGOING = "ongoing"
+    COMPLETED = "completed"
+    POSTPONED = "postponed"
+    CANCELLED = "cancelled"
+    ARCHIVED = "archived"
+
+
+class BookingStatus(str, enum.Enum):
+    """Lifecycle state of an equipment booking."""
+
+    PENDING = "pending"
+    APPROVED = "approved"
+    REJECTED = "rejected"
+    CANCELLED = "cancelled"
+    COMPLETED = "completed"
+
+
+class InvitationStatus(str, enum.Enum):
+    """Lifecycle state of an invitation / access code."""
+
+    PENDING = "pending"
+    ACCEPTED = "accepted"
+    EXPIRED = "expired"
+    REVOKED = "revoked"
+
+
+class GrantType(str, enum.Enum):
+    """How an access grant was issued."""
+
+    EMAIL_VERIFICATION = "email_verification"
+    INVITATION = "invitation"
+    ADMIN_APPROVAL = "admin_approval"
+    FACULTY_APPROVAL = "faculty_approval"
+
+
+class DocumentProcessingStatus(str, enum.Enum):
+    """Processing state of an uploaded document."""
+
+    PENDING = "pending"
+    PROCESSING = "processing"
+    INDEXED = "indexed"
+    FAILED = "failed"

@@ -14,8 +14,6 @@ from app.core.security import decode_token
 from app.db.session import get_session
 from app.models.auth import User
 
-# auto_error=False so missing credentials produce OUR 401 envelope, not
-# FastAPI's default "Not authenticated" body.
 _bearer = HTTPBearer(auto_error=False)
 
 
@@ -50,4 +48,32 @@ async def get_current_user(
         raise AuthenticationError("User no longer exists")
     if not user.is_active:
         raise AuthenticationError("Account is disabled")
+    return user
+
+
+async def get_optional_current_user(
+    credentials: HTTPAuthorizationCredentials | None = Depends(_bearer),
+    session: AsyncSession = Depends(get_session),
+) -> User | None:
+    """Resolve the authenticated user, or return ``None`` if not authenticated.
+
+    Unlike ``get_current_user``, this never raises for missing or invalid
+    tokens — it silently returns ``None`` so public endpoints can still
+    distinguish anonymous visitors.
+    """
+    if credentials is None or not credentials.credentials:
+        return None
+    try:
+        payload = decode_token(credentials.credentials)
+    except jwt.PyJWTError:
+        return None
+    if payload.get("type") != "access":
+        return None
+    try:
+        user_id = uuid.UUID(str(payload.get("sub")))
+    except (ValueError, TypeError):
+        return None
+    user = await session.scalar(select(User).where(User.id == user_id))
+    if user is None or not user.is_active:
+        return None
     return user

@@ -1,0 +1,41 @@
+# Optional local infrastructure: PostgreSQL 16 + pgvector, and Ollama.
+# Alternative to installing PostgreSQL natively (see SETUP.md).
+# Defaults match backend/.env.example, so DATABASE_URL works unchanged:
+#   postgresql+asyncpg://postgres:postgres@localhost:5432/idealab
+# Schema is created by Alembic (cd backend; alembic upgrade head), NOT by SQL init scripts.
+# Local development only: change credentials before any non-local use.
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: idealab-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-idealab}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    ports:
+      - "127.0.0.1:5432:5432"   # localhost only; never expose the database publicly
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-idealab}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # Optional. Models are NOT downloaded automatically. Pull them yourself:
+  #   docker exec -it idealab-ollama ollama pull nomic-embed-text
+  ollama:
+    image: ollama/ollama:latest
+    container_name: idealab-ollama
+    profiles: ["ollama"]        # start with: docker compose --profile ollama up -d
+    ports:
+      - "127.0.0.1:11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  ollama_data:

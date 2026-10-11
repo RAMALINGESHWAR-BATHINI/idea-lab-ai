@@ -120,3 +120,35 @@ Keep `EMBEDDING_PROVIDER=ollama` so private data never leaves the machine.
 | 429 on auth endpoints | expected rate limit; raise `RATE_LIMIT_AUTH` in `.env` for local load tests |
 | `/docs` returns 404 | docs are hidden unless `DEBUG=true` |
 | Ollama errors | ensure `ollama serve` is running; check `OLLAMA_BASE_URL` |
+
+## Optional: PostgreSQL + Ollama via Docker
+
+Instead of a native PostgreSQL install you can use Docker Desktop:
+
+```powershell
+docker compose up -d postgres                 # PostgreSQL 16 + pgvector on 127.0.0.1:5432
+docker compose --profile ollama up -d         # also start Ollama (optional)
+cd backend; alembic upgrade head              # schema comes from Alembic migrations
+```
+
+Defaults match `backend/.env.example`. For an NVIDIA GPU add `-f docker-compose.gpu.yml`.
+Ollama models are never pulled automatically; run `docker exec -it idealab-ollama ollama pull nomic-embed-text` yourself.
+
+## Two frontends, one backend
+
+| App | Folder | Dev URL | Purpose |
+|---|---|---|---|
+| Backend API | `backend/` | http://127.0.0.1:8000 | shared by both apps |
+| Website | `frontend/` | http://localhost:5173 | public site, sign-in, dashboards, text chat |
+| Voice assistant | `voice/` | http://localhost:5174 | speak or type, answers read aloud |
+
+```powershell
+cd frontend; npm install; cd ..
+cd voice; npm install; cd ..
+.\scripts\dev.ps1        # opens backend + website + voice in three windows
+```
+
+Both apps call the same `/api` endpoints (the voice app sends `channel: "voice"` to `/api/ai/chat` so replies are short and speakable).
+In development Vite proxies `/api` to the backend. For deployed builds set `VITE_API_URL` and add each app origin to `CORS_ORIGINS` in `backend/.env`.
+
+Voice notes: speech recognition and speech output use the browser Web Speech API (free, no key). In Chrome/Edge the audio is typically sent to the browser vendor\x27s speech service; the voice app shows a consent notice before enabling the microphone. Firefox has no speech recognition, so the app falls back to typed questions. The microphone needs `localhost` or HTTPS.

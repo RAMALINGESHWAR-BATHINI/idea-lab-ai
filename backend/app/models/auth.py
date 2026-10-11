@@ -92,6 +92,9 @@ class User(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
     # Link to an optional college identity (faculty/staff/student/member).
     person_ref: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    is_email_verified: Mapped[bool] = mapped_column(
+        Boolean, default=False, nullable=False
+    )
 
     conversations: Mapped[list["Conversation"]] = relationship(  # noqa: F821
         back_populates="user",

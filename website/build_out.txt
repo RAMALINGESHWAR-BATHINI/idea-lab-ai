@@ -1,0 +1,341 @@
+src/components/RequireAuth.tsx(4,55): error TS2503: Cannot find namespace 'JSX'.
+src/components/RequireAuth.tsx(26,60): error TS2503: Cannot find namespace 'JSX'.
+src/pages/dashboard/AuditDashboard.tsx(9,46): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/AuditDashboard.tsx(41,20): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/dashboard/AuditDashboard.tsx(41,25): error TS7006: Parameter 'log' implicitly has an 'any' type.
+src/pages/dashboard/Dashboard.tsx(8,63): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/Dashboard.tsx(12,67): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/Dashboard.tsx(16,69): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/Dashboard.tsx(23,22): error TS2339: Property 'length' does not exist on type '{}'.
+src/pages/dashboard/Dashboard.tsx(28,24): error TS2339: Property 'length' does not exist on type '{}'.
+src/pages/dashboard/Dashboard.tsx(33,25): error TS2339: Property 'length' does not exist on type '{}'.
+src/pages/dashboard/Dashboard.tsx(64,32): error TS2339: Property 'length' does not exist on type '{}'.
+src/pages/dashboard/Dashboard.tsx(68,26): error TS2339: Property 'slice' does not exist on type '{}'.
+src/pages/dashboard/Dashboard.tsx(68,43): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/dashboard/Dashboard.tsx(88,34): error TS2339: Property 'length' does not exist on type '{}'.
+src/pages/dashboard/Dashboard.tsx(92,28): error TS2339: Property 'slice' does not exist on type '{}'.
+src/pages/dashboard/Dashboard.tsx(92,45): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/pages/dashboard/EventsDashboard.tsx(11,48): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/EventsDashboard.tsx(16,5): error TS2559: Type '(data: any) => Promise<any>' has no properties in common with type 'UseMutationOptions<unknown, Error, void, unknown>'.
+src/pages/dashboard/EventsDashboard.tsx(18,54): error TS2559: Type 'string[]' has no properties in common with type 'InvalidateQueryFilters<readonly unknown[]>'.
+src/pages/dashboard/EventsDashboard.tsx(46,43): error TS2559: Type 'string[]' has no properties in common with type 'InvalidateQueryFilters<readonly unknown[]>'.
+src/pages/dashboard/EventsDashboard.tsx(71,22): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/dashboard/EventsDashboard.tsx(71,27): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/dashboard/EventsDashboard.tsx(105,55): error TS2559: Type 'string[]' has no properties in common with type 'InvalidateQueryFilters<readonly unknown[]>'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(8,65): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(11,61): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(14,65): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(36,25): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(36,30): error TS7006: Parameter 'f' implicitly has an 'any' type.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(62,25): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(62,30): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(79,51): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(98,23): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(98,28): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(114,46): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(133,18): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(133,23): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(149,50): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(167,22): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/dashboard/PeopleEquipmentDocumentsSettings.tsx(167,27): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/pages/dashboard/ProjectsDashboard.tsx(11,50): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/ProjectsDashboard.tsx(39,43): error TS2559: Type 'string[]' has no properties in common with type 'InvalidateQueryFilters<readonly unknown[]>'.
+src/pages/dashboard/ProjectsDashboard.tsx(57,24): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/dashboard/ProjectsDashboard.tsx(57,29): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/pages/dashboard/ProjectsDashboard.tsx(76,55): error TS2559: Type 'string[]' has no properties in common with type 'InvalidateQueryFilters<readonly unknown[]>'.
+src/pages/dashboard/UsersDashboard.tsx(11,47): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/UsersDashboard.tsx(15,61): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/dashboard/UsersDashboard.tsx(47,21): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/dashboard/UsersDashboard.tsx(47,26): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/pages/EquipmentDetail.tsx(27,5): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type '(string | undefined)[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type '(string | undefined)[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type '(string | undefined)[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type '(string | undefined)[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type '(string | undefined)[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type '(string | undefined)[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/EquipmentDetail.tsx(54,27): error TS2339: Property 'specifications' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(65,73): error TS2339: Property 'name' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(68,27): error TS2339: Property 'status' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(70,31): error TS2339: Property 'status' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(75,26): error TS2339: Property 'status' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(79,22): error TS2339: Property 'category' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(81,26): error TS2339: Property 'category' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(85,22): error TS2339: Property 'description' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(88,75): error TS2339: Property 'description' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(107,24): error TS2339: Property 'location' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(107,60): error TS2339: Property 'location' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(108,24): error TS2339: Property 'serial_number' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(108,63): error TS2339: Property 'serial_number' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(109,24): error TS2339: Property 'quantity' does not exist on type '{}'.
+src/pages/EquipmentDetail.tsx(109,69): error TS2339: Property 'quantity' does not exist on type '{}'.
+src/pages/EventDetail.tsx(27,5): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type '(string | undefined)[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type '(string | undefined)[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type '(string | undefined)[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type '(string | undefined)[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type '(string | undefined)[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type '(string | undefined)[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/EventDetail.tsx(72,69): error TS2339: Property 'title' does not exist on type '{}'.
+src/pages/EventDetail.tsx(74,22): error TS2339: Property 'kind' does not exist on type '{}'.
+src/pages/EventDetail.tsx(78,18): error TS2339: Property 'description' does not exist on type '{}'.
+src/pages/EventDetail.tsx(81,71): error TS2339: Property 'description' does not exist on type '{}'.
+src/pages/EventDetail.tsx(86,20): error TS2339: Property 'starts_at' does not exist on type '{}'.
+src/pages/EventDetail.tsx(89,35): error TS2339: Property 'starts_at' does not exist on type '{}'.
+src/pages/EventDetail.tsx(90,24): error TS2339: Property 'ends_at' does not exist on type '{}'.
+src/pages/EventDetail.tsx(91,42): error TS2339: Property 'ends_at' does not exist on type '{}'.
+src/pages/EventDetail.tsx(95,20): error TS2339: Property 'venue' does not exist on type '{}'.
+src/pages/EventDetail.tsx(97,68): error TS2339: Property 'venue' does not exist on type '{}'.
+src/pages/EventDetail.tsx(100,20): error TS2339: Property 'organizer' does not exist on type '{}'.
+src/pages/EventDetail.tsx(102,72): error TS2339: Property 'organizer' does not exist on type '{}'.
+src/pages/EventDetail.tsx(105,20): error TS2339: Property 'capacity' does not exist on type '{}'.
+src/pages/EventDetail.tsx(107,71): error TS2339: Property 'capacity' does not exist on type '{}'.
+src/pages/EventDetail.tsx(112,18): error TS2339: Property 'registration_url' does not exist on type '{}'.
+src/pages/EventDetail.tsx(114,27): error TS2339: Property 'registration_url' does not exist on type '{}'.
+src/pages/Events.tsx(23,55): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/Events.tsx(52,35): error TS2339: Property 'filter' does not exist on type '{}'.
+src/pages/Events.tsx(52,43): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Events.tsx(60,31): error TS2339: Property 'filter' does not exist on type '{}'.
+src/pages/Events.tsx(60,39): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/pages/Events.tsx(79,30): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/pages/Events.tsx(92,26): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/pages/Facilities.tsx(22,51): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/Facilities.tsx(42,25): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/Facilities.tsx(42,30): error TS7006: Parameter 'eq' implicitly has an 'any' type.
+src/pages/People.tsx(50,65): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/People.tsx(53,65): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/People.tsx(56,61): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/People.tsx(75,25): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/People.tsx(75,30): error TS7006: Parameter 'f' implicitly has an 'any' type.
+src/pages/People.tsx(92,25): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/People.tsx(92,30): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/pages/People.tsx(99,9): error TS2322: Type 'unknown' is not assignable to type 'ReactNode'.
+src/pages/People.tsx(99,25): error TS2339: Property 'length' does not exist on type '{}'.
+src/pages/People.tsx(103,22): error TS2339: Property 'map' does not exist on type '{}'.
+src/pages/People.tsx(103,27): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/pages/People.tsx(118,17): error TS2339: Property 'photo_url' does not exist on type 'Faculty | Staff'.
+  Property 'photo_url' does not exist on type 'Staff'.
+src/pages/People.tsx(120,25): error TS2339: Property 'photo_url' does not exist on type 'Faculty | Staff'.
+  Property 'photo_url' does not exist on type 'Staff'.
+src/pages/People.tsx(132,19): error TS2339: Property 'specialization' does not exist on type 'Faculty | Staff'.
+  Property 'specialization' does not exist on type 'Staff'.
+src/pages/People.tsx(133,79): error TS2339: Property 'specialization' does not exist on type 'Faculty | Staff'.
+  Property 'specialization' does not exist on type 'Staff'.
+src/pages/ProjectDetail.tsx(27,5): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type '(string | undefined)[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type '(string | undefined)[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type '(string | undefined)[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type '(string | undefined)[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type '(string | undefined)[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type '(string | undefined)[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/ProjectDetail.tsx(54,28): error TS2339: Property 'technologies' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(55,15): error TS2339: Property 'technologies' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(55,44): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/pages/ProjectDetail.tsx(67,71): error TS2339: Property 'title' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(68,22): error TS2339: Property 'status' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(70,26): error TS2339: Property 'status' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(75,20): error TS2339: Property 'domain' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(77,24): error TS2339: Property 'domain' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(81,20): error TS2339: Property 'summary' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(82,64): error TS2339: Property 'summary' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(85,20): error TS2339: Property 'description' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(88,73): error TS2339: Property 'description' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(96,32): error TS7006: Parameter 'tech' implicitly has an 'any' type.
+src/pages/ProjectDetail.tsx(96,38): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/pages/ProjectDetail.tsx(106,22): error TS2339: Property 'started_at' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(106,66): error TS2339: Property 'started_at' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(107,43): error TS2339: Property 'created_at' does not exist on type '{}'.
+src/pages/ProjectDetail.tsx(108,22): error TS2339: Property 'is_published' does not exist on type '{}'.
+src/pages/Projects.tsx(22,57): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(options: DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): DefinedUseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'DefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'Omit<UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, "queryFn">'.
+  Overload 2 of 3, '(options: UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UndefinedInitialDataOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+  Overload 3 of 3, '(options: UseQueryOptions<unknown, Error, unknown, readonly unknown[]>, queryClient?: QueryClient | undefined): UseQueryResult<unknown, Error>', gave the following error.
+    Argument of type 'string[]' is not assignable to parameter of type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+      Property 'queryKey' is missing in type 'string[]' but required in type 'UseQueryOptions<unknown, Error, unknown, readonly unknown[]>'.
+src/pages/Projects.tsx(51,38): error TS2339: Property 'filter' does not exist on type '{}'.
+src/pages/Projects.tsx(51,46): error TS7006: Parameter 'p' implicitly has an 'any' type.
+src/pages/Projects.tsx(78,29): error TS7006: Parameter 'project' implicitly has an 'any' type.

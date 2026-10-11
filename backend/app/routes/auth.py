@@ -41,6 +41,8 @@ from app.models.auth import User
 from app.models.enums import RoleName
 from app.schemas.auth import (
     LoginRequest,
+    PasswordResetConfirm,
+    PasswordResetRequest,
     RefreshRequest,
     RegisterRequest,
     TokenResponse,
@@ -85,8 +87,13 @@ def _user_read(user: User) -> UserRead:
         email=user.email,
         full_name=user.full_name,
         role=user.role.name if user.role else None,
+        role_id=user.role_id,
         is_superuser=user.is_superuser,
+        is_active=user.is_active,
+        is_email_verified=user.is_email_verified,
+        last_login_at=user.last_login_at,
         created_at=user.created_at,
+        person_ref=user.person_ref,
     )
 
 
@@ -261,3 +268,83 @@ async def refresh(
 async def current_user(user: User = Depends(get_current_user)) -> UserRead:
     """Return the profile of the authenticated user."""
     return _user_read(user)
+
+
+@router.post("/password-reset/request")
+@limiter.limit(settings.rate_limit_auth)
+async def request_password_reset(
+    payload: PasswordResetRequest,
+    request: Request,
+    response: Response,
+    session: AsyncSession = Depends(get_session),
+) -> dict[str, str]:
+    """Generate a password-reset token (dummy token if email is unknown).
+
+    Always returns success to prevent email enumeration. The token is valid
+    for a short window and is consumed by ``POST /password-reset/confirm``.
+    """
+    email = _normalise_email(payload.email)
+    user = await session.scalar(select(User).where(User.email == email))
+    reset_token: str | None = None
+
+    if user is not None and user.is_active:
+        reset_token = create_access_token(
+            str(user.id),
+            extra={"type": "password_reset"},
+        )
+
+    await record_audit(
+        session,
+        action="auth.password_reset_requested",
+        user_id=user.id if user else None,
+        actor=email,
+        ip_address=_client_ip(request),
+        user_agent=_user_agent(request),
+    )
+    await session.commit()
+
+    if reset_token:
+        # In production this would be emailed. We return it directly only in
+        # development to make testing practical.
+        if settings.debug:
+            return {"status": "ok", "reset_token": reset_token}
+    return {"status": "ok"}
+
+
+@router.post("/password-reset/confirm")
+@limiter.limit(settings.rate_limit_auth)
+async def confirm_password_reset(
+    payload: PasswordResetConfirm,
+    request: Request,
+    response: Response,
+    session: AsyncSession = Depends(get_session),
+) -> dict[str, str]:
+    """Consume a password-reset token and set the new password."""
+    try:
+        data = decode_token(payload.token)
+    except jwt.PyJWTError as exc:
+        raise AuthenticationError("Invalid or expired reset token") from exc
+
+    if data.get("type") != "password_reset":
+        raise AuthenticationError("Password reset token required")
+
+    try:
+        user_id = uuid.UUID(str(data.get("sub")))
+    except (ValueError, TypeError) as exc:
+        raise AuthenticationError("Invalid token subject") from exc
+
+    user = await session.get(User, user_id)
+    if user is None:
+        raise AuthenticationError("Invalid or expired reset token")
+
+    user.hashed_password = hash_password(payload.new_password)
+    await record_audit(
+        session,
+        action="auth.password_reset",
+        user_id=user.id,
+        actor=user.email,
+        ip_address=_client_ip(request),
+        user_agent=_user_agent(request),
+    )
+    await session.commit()
+    return {"status": "ok"}

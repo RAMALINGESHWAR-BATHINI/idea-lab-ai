@@ -12,7 +12,11 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.config import settings
 from app.db.base import Base, TimestampMixin, UUIDPrimaryKeyMixin
-from app.models.enums import AccessLevel, DocumentType
+from app.models.enums import (
+    AccessLevel,
+    DocumentProcessingStatus,
+    DocumentType,
+)
 
 
 class Document(UUIDPrimaryKeyMixin, TimestampMixin, Base):
@@ -38,6 +42,11 @@ class Document(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     )
     uploaded_by: Mapped[str | None] = mapped_column(String(200), nullable=True)
     is_indexed: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    processing_status: Mapped[DocumentProcessingStatus] = mapped_column(
+        SAEnum(DocumentProcessingStatus, name="document_processing_status"),
+        default=DocumentProcessingStatus.PENDING,
+        nullable=False,
+    )
     access_level: Mapped[AccessLevel] = mapped_column(
         SAEnum(AccessLevel, name="access_level"),
         default=AccessLevel.INTERNAL,

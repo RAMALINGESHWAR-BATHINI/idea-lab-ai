@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
@@ -23,7 +23,11 @@ from app.core.errors import register_exception_handlers
 from app.core.logging import configure_logging, get_logger
 from app.core.rate_limit import limiter, rate_limit_exceeded_handler
 from app.db.session import dispose_engine
+from app.routes import admin as admin_routes
 from app.routes import auth as auth_routes
+from app.routes import chat as chat_routes
+from app.routes import content as content_routes
+from app.routes import devices as device_routes
 from app.routes import health as health_routes
 
 logger = get_logger(__name__)
@@ -79,12 +83,33 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
 
+    # --- Security headers ----------------------------------------------------
+    @app.middleware("http")
+    async def _set_security_headers(request: Request, call_next):
+        response = await call_next(request)
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["X-XSS-Protection"] = "1; mode=block"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Permissions-Policy"] = (
+            "geolocation=(), microphone=(), camera=()"
+        )
+        if settings.is_production:
+            response.headers["Strict-Transport-Security"] = (
+                "max-age=31536000; includeSubDomains"
+            )
+        return response
+
     # --- JSON error envelopes ---------------------------------------------
     register_exception_handlers(app)
 
     # --- routers -----------------------------------------------------------
     app.include_router(health_routes.router)
     app.include_router(auth_routes.router, prefix=f"{settings.api_prefix}/auth")
+    app.include_router(content_routes.router, prefix=f"{settings.api_prefix}/content")
+    app.include_router(chat_routes.router, prefix=f"{settings.api_prefix}/ai")
+    app.include_router(admin_routes.router, prefix=f"{settings.api_prefix}/admin")
+    app.include_router(device_routes.router, prefix=f"{settings.api_prefix}/devices")
 
     return app
 

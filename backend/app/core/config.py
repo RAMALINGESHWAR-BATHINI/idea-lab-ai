@@ -31,6 +31,9 @@ class Settings(BaseSettings):
     host: str = "127.0.0.1"
     port: int = 8000
 
+    # ---- Frontend ----
+    frontend_origin: str = "http://localhost:5173"
+
     # ---- Security / auth ----
     secret_key: str = Field(
         default="change-me-in-production-please-use-a-long-random-value",
@@ -62,10 +65,10 @@ class Settings(BaseSettings):
 
     # ---- Gemini ----
     gemini_api_key: str = ""
-    gemini_text_model: str = "gemini-3.8-flash"
-    gemini_live_model: str = "gemini-3.8-live"
-    gemini_live_thinking_model: str = "gemini-3.8-live-extended-thinking"
-    gemini_embedding_model: str = "gemini-embedding-2"
+    gemini_text_model: str = "gemini-1.5-flash"
+    gemini_live_model: str = "gemini-2.0-flash-live"
+    gemini_live_thinking_model: str = "gemini-2.0-flash-live"
+    gemini_embedding_model: str = "text-embedding-004"
     gemini_verify_models_on_start: bool = True
 
     # ---- Ollama (local / private inference + embeddings) ----
@@ -96,6 +99,9 @@ class Settings(BaseSettings):
     # ---- Memory ----
     memory_max_items_per_user: int = 500
     conversation_history_limit: int = 40
+
+    # ---- File storage ----
+    storage_root: str = "backend/data/uploads"
 
     # ---- Logging / audit ----
     log_level: str = "INFO"

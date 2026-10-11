@@ -1,0 +1,14 @@
+export { Home } from "./Home";
+export { About } from "./About";
+export { Events } from "./Events";
+export { EventDetail } from "./EventDetail";
+export { Projects } from "./Projects";
+export { ProjectDetail } from "./ProjectDetail";
+export { People } from "./People";
+export { Facilities } from "./Facilities";
+export { EquipmentDetail } from "./EquipmentDetail";
+export { Achievements } from "./Achievements";
+export { Media } from "./Achievements";
+export { Contact } from "./Achievements";
+export { Chat } from "./Chat";
+export { Login, Register } from "./Auth";

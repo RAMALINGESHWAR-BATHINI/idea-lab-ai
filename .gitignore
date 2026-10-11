@@ -39,3 +39,8 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 .idea/
+
+# ---- Frontend build output ----
+dist/
+*.tsbuildinfo
+.env.local

@@ -7,10 +7,15 @@ from datetime import datetime
 from sqlalchemy import Boolean, DateTime, Enum as SAEnum
 from sqlalchemy import ForeignKey, Integer, String, Text
 from sqlalchemy.dialects.postgresql import UUID as PGUUID
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db.base import Base, TimestampMixin, UUIDPrimaryKeyMixin
-from app.models.enums import AccessLevel, EventKind, NoticePriority
+from app.models.enums import (
+    AccessLevel,
+    EventKind,
+    EventStatus,
+    NoticePriority,
+)
 
 
 class Project(UUIDPrimaryKeyMixin, TimestampMixin, Base):
@@ -37,6 +42,7 @@ class Project(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     repo_url: Mapped[str | None] = mapped_column(String(500), nullable=True)
     demo_url: Mapped[str | None] = mapped_column(String(500), nullable=True)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+    is_published: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     started_at: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True), nullable=True
     )
@@ -73,6 +79,11 @@ class Event(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     registration_url: Mapped[str | None] = mapped_column(String(500), nullable=True)
     capacity: Mapped[int | None] = mapped_column(Integer, nullable=True)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+    status: Mapped[EventStatus] = mapped_column(
+        SAEnum(EventStatus, name="event_status"),
+        default=EventStatus.DRAFT,
+        nullable=False,
+    )
     access_level: Mapped[AccessLevel] = mapped_column(
         SAEnum(AccessLevel, name="access_level"),
         default=AccessLevel.PUBLIC,
@@ -141,3 +152,33 @@ class Notice(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
     def __repr__(self) -> str:  # pragma: no cover - debug helper
         return f"<Notice {self.title}>"
+
+
+class EventRegistration(UUIDPrimaryKeyMixin, TimestampMixin, Base):
+    """A participant registration for an event."""
+
+    __tablename__ = "event_registrations"
+
+    event_id: Mapped[uuid.UUID] = mapped_column(
+        PGUUID(as_uuid=True),
+        ForeignKey("events.id", ondelete="CASCADE"),
+        index=True,
+        nullable=False,
+    )
+    event: Mapped[Event] = relationship()
+
+    user_id: Mapped[uuid.UUID | None] = mapped_column(
+        PGUUID(as_uuid=True),
+        ForeignKey("users.id", ondelete="SET NULL"),
+        nullable=True,
+    )
+    user: Mapped["User | None"] = relationship()  # noqa: F821
+
+    email: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    full_name: Mapped[str | None] = mapped_column(String(200), nullable=True)
+    attended_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+
+    def __repr__(self) -> str:  # pragma: no cover - debug helper
+        return f"<EventRegistration event={self.event_id}>"
