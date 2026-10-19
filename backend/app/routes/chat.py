@@ -41,6 +41,8 @@ async def chat(
         message=payload.message,
         conversation_id=payload.conversation_id,
         channel=payload.channel,
+        mode=payload.mode,
+        behavior_policy=payload.behavior_policy,
     )
     return response
 

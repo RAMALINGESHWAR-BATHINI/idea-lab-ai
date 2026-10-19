@@ -29,6 +29,9 @@ class Conversation(UUIDPrimaryKeyMixin, TimestampMixin, Base):
 
     title: Mapped[str | None] = mapped_column(String(300), nullable=True)
     channel: Mapped[str] = mapped_column(String(20), default="text", nullable=False)
+    mode: Mapped[str | None] = mapped_column(String(20), nullable=True)
+    behavior_policy: Mapped[str | None] = mapped_column(String(20), nullable=True)
+    pending_action: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
 
     started_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), nullable=False

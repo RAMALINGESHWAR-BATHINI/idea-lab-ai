@@ -37,6 +37,7 @@ export default function App() {
   const [token, setToken] = useState<string | null>(null);
   const [userName, setUserName] = useState<string | null>(null);
   const [conversationId, setConversationId] = useState<string | null>(null);
+  const [voiceMode, setVoiceMode] = useState<string | null>(null);
 
   const abortRef = useRef<AbortController | null>(null);
   const nextId = useRef(1);
@@ -73,8 +74,9 @@ export default function App() {
       const controller = new AbortController();
       abortRef.current = controller;
       try {
-        const result = await sendVoiceMessage(message, conversationId, token, controller.signal);
-        if (result.conversation_id) setConversationId(result.conversation_id);
+      const result = await sendVoiceMessage(message, conversationId, token, controller.signal, voiceMode);
+      if (result.conversation_id) setConversationId(result.conversation_id);
+      if (result.mode) setVoiceMode(result.mode);
         addTurn({
           role: "assistant",
           text: result.content || "I don't have an answer for that.",
@@ -90,7 +92,8 @@ export default function App() {
         } else if (err instanceof ApiError && err.status === 401) {
           setToken(null);
           setUserName(null);
-          setConversationId(null);
+      setConversationId(null);
+      setVoiceMode(null);
           setNotice("Your session expired. Sign in again, or continue as a visitor.");
         } else {
           addTurn({
@@ -104,7 +107,7 @@ export default function App() {
         setThinking(false);
       }
     },
-    [addTurn, conversationId, readAloud, synthesis, token, voiceURI],
+    [addTurn, conversationId, readAloud, synthesis, token, voiceURI, voiceMode],
   );
 
   const onMicClick = () => {

@@ -70,6 +70,10 @@ class ChatRequest(BaseModel):
     use_search: bool = True
     # "voice" asks for short, speakable replies (used by the voice assistant app).
     channel: Literal["text", "voice"] = "text"
+    # Assistant mode: "idealab" for IdeaLab tools, "gemini" for general Q&A/web search, "auto" for AI-decided.
+    mode: Literal["idealab", "gemini", "auto"] | None = None
+    # Behavior policy for voice mode switching: "remember", "auto", "ask".
+    behavior_policy: Literal["remember", "auto", "ask"] | None = None
 
 
 class ChatResponse(BaseModel):
@@ -78,3 +82,5 @@ class ChatResponse(BaseModel):
     tool_calls: list[dict[str, Any]]
     conversation_id: str | None
     ai_available: bool
+    mode: str | None = None
+    behavior_policy: str | None = None

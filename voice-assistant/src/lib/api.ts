@@ -23,6 +23,7 @@ export interface ChatResult {
   sources: ChatSource[];
   conversation_id: string | null;
   ai_available: boolean;
+  mode?: string | null;
 }
 
 interface TokenResponse {
@@ -98,6 +99,7 @@ export function sendVoiceMessage(
   conversationId: string | null,
   token: string | null,
   signal: AbortSignal,
+  mode?: string | null,
 ): Promise<ChatResult> {
   return request<ChatResult>("POST", "/ai/chat", {
     body: {
@@ -105,6 +107,7 @@ export function sendVoiceMessage(
       conversation_id: conversationId,
       channel: "voice",
       use_search: true,
+      mode: mode || undefined,
     },
     token: token ?? undefined,
     signal,
