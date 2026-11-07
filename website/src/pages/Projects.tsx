@@ -83,43 +83,45 @@ export function Projects() {
           </div>
         )}
 
-        <section className="mt-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            IDEA Lab Project Budget Summary (from AICTE IDEA Lab GCET)
-          </h2>
-          <p className="text-gray-600 mb-4">
-            Total sanctioned: {pptData.totalSanctioned} | Total received: {pptData.totalReceived}
-          </p>
-          <div className="overflow-x-auto">
-            <table className="min-w-full bg-white rounded-xl shadow-md">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Student(s)</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Project Name</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Amount</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {pptData.projects.map((p: any, i: number) => (
-                  <tr key={i} className="hover:bg-gray-50">
-                    <td className="px-4 py-3 text-sm text-gray-900 whitespace-nowrap">{p.date}</td>
-                    <td className="px-4 py-3 text-sm text-gray-700">{p.students}</td>
-                    <td className="px-4 py-3 text-sm text-gray-700">{p.name}</td>
-                    <td className="px-4 py-3 text-sm text-gray-500">{p.amount}</td>
-                    <td className="px-4 py-3 text-sm text-gray-500">{p.status}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
       </div>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+          IDEA Lab Project Budget Summary (from AICTE IDEA Lab GCET)
+        </h2>
+        <p className="text-gray-600 mb-4">
+          Total sanctioned: {pptData.totalSanctioned} | Total received: {pptData.totalReceived}
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {pptData.projects.map((p: any, i: number) => (
+            <div
+              key={i}
+              className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
+            >
+              <h3 className="font-bold text-lg text-gray-900 mb-2">{p.name}</h3>
+              <div className="text-sm text-gray-600 space-y-1 mb-3">
+                <p>👤 {p.students}</p>
+                <p>📅 {p.date}</p>
+                <p>💰 {p.amount}</p>
+              </div>
+              <span
+                className={`px-2 py-1 text-xs rounded-full ${
+                  p.status === "Prototype Completed"
+                    ? "bg-green-100 text-green-800"
+                    : p.status === "In Progress"
+                    ? "bg-yellow-100 text-yellow-800"
+                    : "bg-gray-100 text-gray-600"
+                }`}
+              >
+                {p.status}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
-
 function ProjectCard({ project }: { project: Project }) {
   const techList = project.technologies
     ? project.technologies.split(",").map((t) => t.trim())

@@ -102,27 +102,27 @@ const { data: events, isLoading, error } = useQuery({
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
             IDEA Lab Activities (from AICTE IDEA Lab GCET)
           </h2>
-          <div className="overflow-x-auto">
-            <table className="min-w-full bg-white rounded-xl shadow-md">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Programme</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Stakeholders</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Participants</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {pptData.events.map((e, i) => (
-                  <tr key={i} className="hover:bg-gray-50">
-                    <td className="px-4 py-3 text-sm text-gray-900 whitespace-nowrap">{e.date}</td>
-                    <td className="px-4 py-3 text-sm text-gray-700">{e.name}</td>
-                    <td className="px-4 py-3 text-sm text-gray-500">{e.stakeholders}</td>
-                    <td className="px-4 py-3 text-sm text-gray-500">{e.participants || "-"}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {pptData.events.map((e, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="font-bold text-lg text-gray-900">{e.name}</h3>
+                  <span className="px-2 py-1 text-xs bg-primary-100 text-primary-800 rounded-full">
+                    {e.duration}
+                  </span>
+                </div>
+                <div className="text-sm text-gray-500 space-y-1">
+                  <p>📅 {e.date}</p>
+                  <p>👥 {e.stakeholders}</p>
+                  {e.participants > 0 && (
+                    <p>🎓 {e.participants} participants</p>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </div>
