@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { api } from "@/api/client";
+import idealabData from "../data/idealab.json";
 
 interface Equipment {
   id: string;
@@ -18,8 +19,20 @@ interface Equipment {
   updated_at: string;
 }
 
+const machineryImages: Record<string, string> = {
+  "CNC Wood Router": "cnc-wood-router.png",
+  "Laser Cutting Machine": "laser-cutting.png",
+  "Table Saw": "table-saw.png",
+  "3D Printer": "3d-printer.png",
+  "3D Scanner": "3d-scanner.png",
+  "Sublimation Printer": "sublimation-printer.png",
+  "Lathe Machine": "lathe-machine.png",
+  "Welding Machine": "welding-machine.png",
+  "IoT Sensors": "iot-sensors.png",
+};
+
 export function Facilities() {
-const { data: equipment, isLoading } = useQuery({
+  const { data: equipment, isLoading } = useQuery({
     queryKey: ["equipment"],
     queryFn: () => api.get<Equipment[]>("/content/equipment"),
   });
@@ -31,6 +44,38 @@ const { data: equipment, isLoading } = useQuery({
         <p className="text-gray-600 mb-8">
           Browse available IdeaLab equipment and facilities.
         </p>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            IDEA Lab Machinery
+          </h2>
+          <p className="text-gray-600 mb-6">
+            The AICTE IDEA Lab at GCET is equipped with modern manufacturing and
+            prototyping tools.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {idealabData.machinery.map((m, i) => {
+              const img = machineryImages[m];
+              return (
+                <div
+                  key={i}
+                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                >
+                  {img && (
+                    <img
+                      src={`/ppt-images/${img}`}
+                      alt={m}
+                      className="w-full h-32 object-cover"
+                    />
+                  )}
+                  <div className="p-4">
+                    <h3 className="font-semibold text-gray-900 text-sm">{m}</h3>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
         {isLoading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -89,4 +134,3 @@ function EquipmentCard({ equipment }: { equipment: Equipment }) {
     </Link>
   );
 }
-

@@ -178,11 +178,6 @@ export function About() {
               <li key={i}>{o}</li>
             ))}
           </ul>
-          <img
-            src="/ppt-images/expected-outcomes.png"
-            alt="Expected outcomes diagram"
-            className="mt-4 rounded-lg shadow-sm w-full max-w-2xl"
-          />
         </section>
 
         <section>

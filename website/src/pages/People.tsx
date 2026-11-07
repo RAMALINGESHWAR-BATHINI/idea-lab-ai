@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api/client";
+import idealabData from "../data/idealab.json";
 
 interface Faculty {
   id: string;
@@ -63,9 +64,49 @@ const { data: faculty, isLoading: facultyLoading } = useQuery({
   return (
     <div className="min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">People</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-8">People</h1>
 
-        <section className="mb-12">
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Executive Board</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {idealabData.executiveBoard.map((m, i) => (
+            <div key={i} className="bg-white rounded-xl shadow-md p-6 text-center">
+              <div className="w-16 h-16 rounded-full bg-secondary-100 flex items-center justify-center text-2xl mx-auto mb-3">
+                👤
+              </div>
+              <h3 className="font-bold text-lg text-gray-900">{m.name}</h3>
+              <p className="text-sm text-secondary-600 font-medium">{m.role}</p>
+              <p className="text-xs text-gray-500">{m.department}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Tech Gurus</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {idealabData.techGurus.map((m, i) => (
+            <div key={i} className="bg-white rounded-xl shadow-md p-4 text-center">
+              <h3 className="font-semibold text-sm text-gray-900">{m.name}</h3>
+              <p className="text-xs text-gray-500">{m.department}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Coordinators</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {idealabData.coordinators.map((m, i) => (
+            <div key={i} className="bg-white rounded-xl shadow-md p-4 text-center">
+              <h3 className="font-semibold text-sm text-gray-900">{m.name}</h3>
+              <p className="text-xs text-gray-500">{m.department}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">Faculty & Mentors</h2>
           {facultyLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

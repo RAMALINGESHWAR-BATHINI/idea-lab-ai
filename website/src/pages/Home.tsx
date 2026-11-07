@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import idealabData from "../data/idealab.json";
 
 export function Home() {
   const features = [
@@ -28,12 +29,20 @@ export function Home() {
     <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
       <section className="py-20 text-center">
         <div className="max-w-4xl mx-auto px-4">
+          <img
+            src="/ppt-images/aicte-idea-lab-logo.png"
+            alt="AICTE IDEA Lab Logo"
+            className="mx-auto mb-6 h-24"
+          />
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Welcome to IdeaLab AI
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            A college IdeaLab fostering innovation through building, experimentation,
-            collaboration, and mentoring.
+            AICTE IDEA Lab at {idealabData.college} — fostering innovation
+            through building, experimentation, collaboration, and mentoring.
+          </p>
+          <p className="text-sm text-gray-500 mb-8">
+            {idealabData.accreditation}
           </p>
           <div className="flex gap-4 justify-center">
             <Link
@@ -70,6 +79,30 @@ export function Home() {
       </section>
 
       <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+            IDEA Lab Value: {idealabData.ideaLabWorth}
+          </h2>
+          <p className="text-lg text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+            {idealabData.totalLabs} IDEA Labs across India. Stakeholders include{" "}
+            {idealabData.stakeholders.join(", ")}.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {["cnc-wood-router.png", "laser-cutting.png", "3d-printer.png", "iot-sensors.png"].map(
+              (img, i) => (
+                <img
+                  key={i}
+                  src={`/ppt-images/${img}`}
+                  alt={img.replace(".png", "").replace(/-/g, " ")}
+                  className="rounded-lg shadow-sm w-full h-32 object-cover"
+                />
+              )
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Join the IdeaLab Community
