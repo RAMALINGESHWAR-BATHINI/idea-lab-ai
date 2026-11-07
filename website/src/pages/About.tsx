@@ -180,10 +180,17 @@ export function About() {
           </ul>
         </section>
 
-        <section>
+        <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            AI Assistant
+            Partners & Accreditation
           </h2>
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            <img src="/ppt-images/naac-logo.png" alt="NAAC" className="h-16 object-contain" />
+            <img src="/ppt-images/aicte-idea-lab-logo.png" alt="AICTE IDEA Lab" className="h-16 object-contain" />
+          </div>
+        </section>
+
+        <section>
           <p className="text-gray-700 leading-relaxed">
             The IdeaLab AI assistant helps you explore ideas, research topics, and
             develop projects. It follows the IdeaLab process — asking what problem
