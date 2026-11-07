@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import idealabData from "../data/idealab.json";
 
 export function About() {
   return (
@@ -33,16 +34,155 @@ export function About() {
         </section>
 
         <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Vision</h2>
+          <p className="text-gray-700 leading-relaxed">{idealabData.vision}</p>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Mission</h2>
+          <ul className="list-disc list-inside text-gray-700 space-y-2">
+            {idealabData.mission.map((m, i) => (
+              <li key={i}>{m}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            How to Participate
+            Executive Board
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {idealabData.executiveBoard.map((m, i) => (
+              <div key={i} className="p-4 bg-gray-50 rounded-lg text-center">
+                <p className="font-semibold text-gray-900">{m.name}</p>
+                <p className="text-sm text-gray-600">{m.role}</p>
+                <p className="text-xs text-gray-500">{m.department}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">Tech Gurus</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {idealabData.techGurus.map((m, i) => (
+              <div key={i} className="p-4 bg-gray-50 rounded-lg text-center">
+                <p className="font-semibold text-gray-900 text-sm">{m.name}</p>
+                <p className="text-xs text-gray-500">{m.department}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            Operational Managers
+          </h2>
+          <div className="grid grid-cols-2 gap-4">
+            {idealabData.operationalManagers.map((m, i) => (
+              <div key={i} className="p-4 bg-gray-50 rounded-lg text-center">
+                <p className="font-semibold text-gray-900 text-sm">{m.name}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            Coordinators
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {idealabData.coordinators.map((m, i) => (
+              <div key={i} className="p-4 bg-gray-50 rounded-lg text-center">
+                <p className="font-semibold text-gray-900 text-sm">{m.name}</p>
+                <p className="text-xs text-gray-500">{m.department}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            IDEA Lab Overview
+          </h2>
+          <div className="p-6 bg-gray-50 rounded-lg space-y-2">
+            <p className="text-gray-700">
+              <span className="font-semibold">Lab Value:</span> {idealabData.ideaLabWorth}
+            </p>
+            <p className="text-gray-700">
+              <span className="font-semibold">Total IDEA Labs across India:</span>{" "}
+              {idealabData.totalLabs}
+            </p>
+            <p className="text-gray-700">
+              <span className="font-semibold">Stakeholders:</span>{" "}
+              {idealabData.stakeholders.join(", ")}
+            </p>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            Activities Conducted
           </h2>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li>Attend workshops, bootcamps, and ideation sessions</li>
-            <li>Join or form a project team</li>
-            <li>Mentor others or seek guidance from faculty coordinators</li>
-            <li>Showcase achievements through verified publications and prototypes</li>
-            <li>Collaborate with industry partners on real problems</li>
+            {idealabData.activities.map((a, i) => (
+              <li key={i}>
+                <span className="font-medium">{a.name}</span> — {a.description}
+              </li>
+            ))}
           </ul>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            Available Machinery & Equipment
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {idealabData.machinery.map((m, i) => (
+              <span
+                key={i}
+                className="px-3 py-1 bg-secondary-100 text-secondary-800 rounded-full text-sm"
+              >
+                {m}
+              </span>
+            ))}
+          </div>
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "cnc-wood-router.png",
+              "laser-cutting.png",
+              "table-saw.png",
+              "3d-printer.png",
+              "3d-scanner.png",
+              "sublimation-printer.png",
+              "lathe-machine.png",
+              "welding-machine.png",
+              "iot-sensors.png",
+            ].map((img, i) => (
+              <img
+                key={i}
+                src={`/ppt-images/${img}`}
+                alt={img.replace(".png", "").replace(/-/g, " ")}
+                className="rounded-lg shadow-sm w-full h-32 object-cover"
+              />
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            Expected Outcomes
+          </h2>
+          <ul className="list-disc list-inside text-gray-700 space-y-2">
+            {idealabData.expectedOutcomes.map((o, i) => (
+              <li key={i}>{o}</li>
+            ))}
+          </ul>
+          <img
+            src="/ppt-images/expected-outcomes.png"
+            alt="Expected outcomes diagram"
+            className="mt-4 rounded-lg shadow-sm w-full max-w-2xl"
+          />
         </section>
 
         <section>

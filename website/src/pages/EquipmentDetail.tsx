@@ -23,10 +23,10 @@ export function EquipmentDetail() {
   const { id } = useParams<{ id: string }>();
   const { token } = useAuth();
 
-  const { data: equipment, isLoading, error } = useQuery(
-    ["equipment", id],
-    () => api.get<Equipment>(`/content/equipment/${id}`, token || undefined)
-  );
+  const { data: equipment, isLoading, error } = useQuery({
+    queryKey: ["equipment", id],
+    queryFn: () => api.get<Equipment>(`/content/equipment/${id}`, token || undefined),
+  });
 
   if (isLoading) {
     return (
@@ -51,7 +51,7 @@ export function EquipmentDetail() {
     );
   }
 
-  const specs = equipment.specifications as Record<string, string> | null;
+  const specs = (equipment as any).specifications as Record<string, string> | null;
 
   return (
     <div className="min-h-screen py-12 bg-gray-50">
@@ -62,30 +62,30 @@ export function EquipmentDetail() {
 
         <div className="bg-white rounded-xl shadow-md p-8">
           <div className="flex justify-between items-start mb-4">
-            <h1 className="text-3xl font-bold text-gray-900">{equipment.name}</h1>
+            <h1 className="text-3xl font-bold text-gray-900">{(equipment as any).name}</h1>
             <span
               className={`px-3 py-1 text-sm rounded-full ${
-                equipment.status === "available"
+                (equipment as any).status === "available"
                   ? "bg-green-100 text-green-800"
-                  : equipment.status === "maintenance"
+                  : (equipment as any).status === "maintenance"
                   ? "bg-yellow-100 text-yellow-800"
                   : "bg-gray-100 text-gray-600"
               }`}
             >
-              {equipment.status || "unknown"}
+              {(equipment as any).status || "unknown"}
             </span>
           </div>
 
-          {equipment.category && (
+          {(equipment as any).category && (
             <span className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded mb-4">
-              {equipment.category}
+              {(equipment as any).category}
             </span>
           )}
 
-          {equipment.description && (
+          {(equipment as any).description && (
             <div className="mb-6">
               <h2 className="text-xl font-semibold text-gray-900 mb-2">Description</h2>
-              <p className="text-gray-700 whitespace-pre-wrap">{equipment.description}</p>
+              <p className="text-gray-700 whitespace-pre-wrap">{(equipment as any).description}</p>
             </div>
           )}
 
@@ -104,12 +104,13 @@ export function EquipmentDetail() {
           )}
 
           <div className="border-t pt-4 text-sm text-gray-500 space-y-1">
-            {equipment.location && <p>Location: {equipment.location}</p>}
-            {equipment.serial_number && <p>Serial: {equipment.serial_number}</p>}
-            {equipment.quantity !== null && <p>Quantity: {equipment.quantity}</p>}
+            {(equipment as any).location && <p>Location: {(equipment as any).location}</p>}
+            {(equipment as any).serial_number && <p>Serial: {(equipment as any).serial_number}</p>}
+            {(equipment as any).quantity !== null && <p>Quantity: {(equipment as any).quantity}</p>}
           </div>
         </div>
       </div>
     </div>
   );
 }
+

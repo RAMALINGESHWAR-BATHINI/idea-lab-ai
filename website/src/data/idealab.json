@@ -1,0 +1,66 @@
+{
+  "title": "AICTE IDEA Lab, GCET",
+  "college": "Geethanjali College of Engineering and Technology (Autonomous)",
+  "accreditation": "Accredited by NAAC with A+ Grade; B.Tech. CSE, EEE, ECE accredited by NBA",
+  "address": "Sy. No: 33 & 34, Cheeryal (V), Keesara (M), Medchal District, Telangana – 501301",
+  "ideaLabWorth": "Rs. 90,00,000/-",
+  "totalLabs": 432,
+  "stakeholders": ["School students", "Polytechnic students", "ITI students", "Engineering students", "Faculties", "Industry partners"],
+  "vision": "Seed and nurture creativity, innovation, fostering a culture of entrepreneurship, vicinity, work solutions and facilitating students of ours, as well as other institutions in collaboratively, cooperatively on complex problems, providing technology transfer for sustainable societal development.",
+  "mission": [
+    "Provide IDEA lab facility with 24x7 access for students, all stakeholders, including unemployed youth and women to work creatively and innovatively.",
+    "Organize workshops, training programs, nurture entrepreneurial mind-set, provide incubation facility, nurture skill development, empowering them to be self-reliant.",
+    "Facilitate development of innovative models/prototypes resulting in Minimum Viable Products (MVPs).",
+    "Collaborate with stakeholders including ATAL Tinkering Labs, School Innovation Councils, work collectively and cooperatively, building an innovative and enterprising ecosystem."
+  ],
+  "executiveBoard": [
+    { "name": "Dr. Udaya Kumar Susarla", "role": "Director & Chief Mentor", "department": "AICTE IDEA LAB, GCET" },
+    { "name": "Dr. K. Venatesh", "role": "Co-coordinator", "department": "AICTE IDEA LAB, GCET" },
+    { "name": "Dr. G. Vallathan", "role": "Coordinator", "department": "AICTE IDEA LAB, GCET" }
+  ],
+  "techGurus": [
+    { "name": "Mr. K. Murali", "department": "EEE" },
+    { "name": "Ms. J. Sravani", "department": "CE" },
+    { "name": "Ms. L. Uma Maheshwari", "department": "ECE" },
+    { "name": "Mr. G. Vengateshwarlu", "department": "ECE" }
+  ],
+  "operationalManagers": [
+    { "name": "Ms. Mangala Gowri", "department": "" },
+    { "name": "Ms. J. Sunitha", "department": "" }
+  ],
+  "coordinators": [
+    { "name": "Ms. G. Karunya", "department": "CSE" },
+    { "name": "Dr. K. Kamalakar", "department": "FE" },
+    { "name": "Ms. E. Pravalika", "department": "CSE (AIML)" },
+    { "name": "Ms. T. Srujana", "department": "CSE (AIML)" },
+    { "name": "Mr. M. Mahesh Kumar", "department": "ECE & ME" },
+    { "name": "Mr. T. Prasath Rao", "department": "ECE & ME" },
+    { "name": "Ms. N. Radhika", "department": "CSE (CS)" },
+    { "name": "Mr. Satya Mahipal Reddy", "department": "ME" }
+  ],
+  "activities": [
+    { "name": "6-day Faculty Development Program", "description": "Faculty training on modern tools and technologies" },
+    { "name": "6-day Skilling Program for Students", "description": "Student skill development" },
+    { "name": "12-day Boot Camp for Faculty", "description": "Intensive faculty training" },
+    { "name": "5-day Ideation Workshop for Students", "description": "Student ideation and innovation" },
+    { "name": "2-day Awareness Workshop for Industry Participants", "description": "Industry awareness" },
+    { "name": "6-months Internship Program for Students", "description": "Student internship program" },
+    { "name": "6-day School Teachers' Awareness Program", "description": "School teacher training" },
+    { "name": "Opportunities for school students to do projects", "description": "School student project opportunities" },
+    { "name": "Exposure to IDEA Lab facilities", "description": "Facility tours and demonstrations" },
+    { "name": "Annual Conference/Symposium", "description": "Annual IDEA Lab conference" }
+  ],
+  "machinery": [
+    "CNC Wood Router", "Laser Cutting Machine", "Table Saw", "3D Printer", "3D Scanner",
+    "Vinyl Cutter", "Sublimation Printer", "Lathe Machine", "Welding Machine",
+    "Computer Workstation", "PCB Machine", "IoT Sensors"
+  ],
+  "expectedOutcomes": [
+    "Collaborative multidisciplinary projects and research will enhance problem-solving skills.",
+    "Foster the culture of entrepreneurial outlook for sustainable societal development.",
+    "Facilitates collaboratively working with 50 schools and other institutions, enhancing vocational and cognitive skills.",
+    "An increase of at least 40% in experimental and experiential learning leading to professional development.",
+    "Addresses multidisciplinary education through project-based learning leading to improvement of skill development and employability by 30%.",
+    "An improvement of 35% of networking opportunities with professionals across organisations."
+  ]
+}
