@@ -71,9 +71,11 @@ const { data: faculty, isLoading: facultyLoading } = useQuery({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {idealabData.executiveBoard.map((m, i) => (
             <div key={i} className="bg-white rounded-xl shadow-md p-6 text-center">
-              <div className="w-16 h-16 rounded-full bg-secondary-100 flex items-center justify-center text-2xl mx-auto mb-3">
-                {m.name.charAt(0)}
-              </div>
+              <img
+                src={`/ppt-images/sir_${i + 1}.png`}
+                alt={m.name}
+                className="w-16 h-16 rounded-full object-cover mx-auto mb-3"
+              />
               <h3 className="font-bold text-lg text-gray-900">{m.name}</h3>
               <p className="text-sm text-secondary-600 font-medium">{m.role}</p>
               <p className="text-xs text-gray-500">{m.department}</p>

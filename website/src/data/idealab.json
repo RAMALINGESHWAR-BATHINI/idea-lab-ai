@@ -15,8 +15,8 @@
   ],
   "executiveBoard": [
     { "name": "Dr. Udaya Kumar Susarla", "role": "Director & Chief Mentor", "department": "AICTE IDEA LAB, GCET" },
-    { "name": "Dr. K. Venatesh", "role": "Co-coordinator", "department": "AICTE IDEA LAB, GCET" },
-    { "name": "Dr. G. Vallathan", "role": "Coordinator", "department": "AICTE IDEA LAB, GCET" }
+    { "name": "Dr. G. Vallathan", "role": "Coordinator", "department": "AICTE IDEA LAB, GCET" },
+    { "name": "Dr. K. Venatesh", "role": "Co-coordinator", "department": "AICTE IDEA LAB, GCET" }
   ],
   "techGurus": [
     { "name": "Mr. K. Murali", "department": "EEE" },
