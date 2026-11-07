@@ -100,6 +100,28 @@ const { data: events, isLoading, error } = useQuery({
 
         <section className="mt-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+            Upcoming Events (from AICTE IDEA Lab GCET)
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {pptData.upcomingEvents.map((e, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="font-bold text-lg text-gray-900">{e.name}</h3>
+                  <span className="px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">
+                    {e.duration}
+                  </span>
+                </div>
+                <div className="text-sm text-gray-500 space-y-1">
+                  <p>Stakeholders: {e.stakeholders}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
             IDEA Lab Activities (from AICTE IDEA Lab GCET)
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -171,4 +193,5 @@ function EventCard({ event }: { event: Event }) {
     </Link>
   );
 }
+
 

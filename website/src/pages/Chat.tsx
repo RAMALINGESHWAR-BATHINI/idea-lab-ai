@@ -232,3 +232,4 @@ function MessageBubble({ message }: { message: ChatMessage }) {
     </div>
   );
 }
+
