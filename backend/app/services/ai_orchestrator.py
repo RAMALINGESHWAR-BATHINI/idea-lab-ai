@@ -601,9 +601,9 @@ Rules:
             messages.append(ChatTurn(role=role, content=msg.content))
         messages.append(ChatTurn(role="user", content=message))
 
-        # Auto-search: in Gemini mode, search for every request.
+        # Auto-search: in Gemini mode, search for current-info requests.
         search_sources = []
-        if channel == "voice" and mode == "gemini":
+        if channel == "voice" and mode == "gemini" and _SEARCH_INTENT_PATTERNS.search(message):
             search_query = message
             # If message is a short follow-up, use last search context.
             if len(message.split()) <= 6 and conversation and getattr(conversation, "pending_action", None):
@@ -614,7 +614,6 @@ Rules:
             try:
                 from app.services.web_search import search_web
                 results = None
-                # Try multiple query variations.
                 queries_to_try = [search_query]
                 if "airtel" in search_query.lower():
                     queries_to_try.append("Airtel call only packs October 2025")
@@ -632,7 +631,6 @@ Rules:
                         search_context += f"- {r.title}: {r.snippet or ''} (URL: {r.url})\n"
                         search_sources.append({"url": r.url, "title": r.title})
                     messages.append(ChatTurn(role="user", content=search_context))
-                    # Store search query for follow-ups.
                     if conversation is not None:
                         conversation.pending_action = {"type": "search", "query": search_query}
             except Exception as exc:
@@ -660,8 +658,9 @@ Rules:
         system_prompt = self._build_system_prompt(ctx, channel, mode)
         tool_specs = self._get_enabled_tools(ctx, channel=channel, mode=mode)
 
-        # In Gemini mode, use Google Search grounding for current information.
-        use_grounded = (channel == "voice" and mode == "gemini" and hasattr(provider, "generate_grounded"))
+        # In Gemini mode, use Google Search grounding only for search-intent queries.
+        needs_search = bool(_SEARCH_INTENT_PATTERNS.search(message))
+        use_grounded = (channel == "voice" and mode == "gemini" and needs_search and hasattr(provider, "generate_grounded"))
 
         try:
             if use_grounded:
@@ -674,16 +673,28 @@ Rules:
                         timeout=AI_REQUEST_TIMEOUT,
                     )
                 except (ProviderError, Exception) as exc:
-                    # Fall back to regular generation with web_search tool.
-                    logger.warning("grounded_search_failed", error=str(exc))
-                    reply = await asyncio.wait_for(
-                        provider.generate(
-                            system_instruction=system_prompt,
-                            messages=messages,
-                            tools=tool_specs if tool_specs else None,
-                        ),
-                        timeout=AI_REQUEST_TIMEOUT,
-                    )
+                    error_str = str(exc)
+                    if "429" in error_str or "RESOURCE_EXHAUSTED" in error_str:
+                        logger.warning("gemini_quota_exhausted", error=error_str[:200])
+                        # Fall back to regular generation without grounding.
+                        reply = await asyncio.wait_for(
+                            provider.generate(
+                                system_instruction=system_prompt,
+                                messages=messages,
+                                tools=tool_specs if tool_specs else None,
+                            ),
+                            timeout=AI_REQUEST_TIMEOUT,
+                        )
+                    else:
+                        logger.warning("grounded_search_failed", error=error_str[:200])
+                        reply = await asyncio.wait_for(
+                            provider.generate(
+                                system_instruction=system_prompt,
+                                messages=messages,
+                                tools=tool_specs if tool_specs else None,
+                            ),
+                            timeout=AI_REQUEST_TIMEOUT,
+                        )
             else:
                 reply: ModelReply = await asyncio.wait_for(
                     provider.generate(
