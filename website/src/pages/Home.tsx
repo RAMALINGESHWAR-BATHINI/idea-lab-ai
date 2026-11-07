@@ -49,7 +49,6 @@ export function Home() {
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Welcome to IdeaLab
           </h1>
-          </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             AICTE IDEA Lab at {idealabData.college} — fostering innovation
             through building, experimentation, collaboration, and mentoring.
