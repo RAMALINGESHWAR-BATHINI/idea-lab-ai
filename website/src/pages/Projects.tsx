@@ -65,31 +65,11 @@ export function Projects() {
           </Link>
         </div>
 
-        {published.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-gray-500 mb-4">No published projects yet.</p>
-            <Link
-              to="/contact"
-              className="text-primary-600 hover:text-primary-700 font-medium"
-            >
-              Contact us to showcase your project →
-            </Link>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {published.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        )}
-
-      </div>
-
-      <section className="mt-12">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-          IDEA Lab Project Budget Summary (from AICTE IDEA Lab GCET)
-        </h2>
-        <p className="text-gray-600 mb-4">
+        <section className="mt-0">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+            IDEA Lab Project Budget Summary (from AICTE IDEA Lab GCET)
+          </h2>
+          <p className="text-gray-600 mb-4">
           Total sanctioned: {pptData.totalSanctioned} | Total received: {pptData.totalReceived}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -119,6 +99,7 @@ export function Projects() {
           ))}
         </div>
       </section>
+    </div>
     </div>
   );
 }

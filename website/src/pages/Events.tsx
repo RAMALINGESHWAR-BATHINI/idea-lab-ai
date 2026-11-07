@@ -72,33 +72,7 @@ const { data: events, isLoading, error } = useQuery({
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Events</h1>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Upcoming</h2>
-          {upcoming.length === 0 ? (
-            <p className="text-gray-500">No upcoming events.</p>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {upcoming.map((event) => (
-                <EventCard key={event.id} event={event} />
-              ))}
-            </div>
-          )}
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Past Events</h2>
-          {past.length === 0 ? (
-            <p className="text-gray-500">No past events yet.</p>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {past.map((event) => (
-                <EventCard key={event.id} event={event} />
-              ))}
-            </div>
-          )}
-        </section>
-
-        <section className="mt-12">
+        <section className="mt-0">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
             Upcoming Events (from AICTE IDEA Lab GCET)
           </h2>
