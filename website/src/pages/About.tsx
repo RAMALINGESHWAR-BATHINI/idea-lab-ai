@@ -181,8 +181,11 @@ export function About() {
         </section>
 
         <div className="flex flex-wrap items-center justify-center gap-6 mt-8">
-          <img src="/ppt-images/slide10_img1.png" alt="" className="h-12 object-contain opacity-80" />
-          <img src="/ppt-images/geethanjali-logo.png" alt="" className="h-12 object-contain opacity-80" />
+          <img src="/ppt-images/gcet-logo.png" alt="" className="h-12 object-contain opacity-80" />
+          <img src="/ppt-images/naac-logo.png" alt="" className="h-12 object-contain opacity-80" />
+          <img src="/ppt-images/idealab-logo.png" alt="" className="h-12 object-contain opacity-80" />
+          <img src="/ppt-images/iqac-logo.png" alt="" className="h-12 object-contain opacity-80" />
+          <img src="/ppt-images/aicte-idea-lab-logo.png" alt="" className="h-12 object-contain opacity-80" />
         </div>
 
         <section>
