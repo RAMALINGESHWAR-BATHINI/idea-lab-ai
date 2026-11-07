@@ -31,17 +31,15 @@ export function Home() {
 
       <section className="py-20 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
-            <img src="/ppt-images/gcet-logo.png" alt="" className="h-24 object-contain opacity-80" />
-            <img src="/ppt-images/naac-logo.png" alt="" className="h-24 object-contain opacity-80" />
-            <img
-              src="/ppt-images/aicte-idea-lab-logo.png"
-              alt="AICTE IDEA Lab Logo"
-              className="h-24 object-contain opacity-80"
-            />
-            <img src="/ppt-images/iqac-logo.png" alt="" className="h-24 object-contain opacity-80" />
-            <img src="/ppt-images/iic-logo.png" alt="" className="h-24 object-contain opacity-80" />
-          </div>
+          <img src="/ppt-images/gcet-logo.png" alt="" className="h-10 object-contain opacity-80" />
+          <img src="/ppt-images/naac-logo.png" alt="" className="h-10 object-contain opacity-80" />
+          <img
+            src="/ppt-images/aicte-idea-lab-logo.png"
+            alt="AICTE IDEA Lab Logo"
+            className="mx-auto mb-6 h-24"
+          />
+          <img src="/ppt-images/iqac-logo.png" alt="" className="h-10 object-contain opacity-80" />
+          <img src="/ppt-images/iic-logo.png" alt="" className="h-10 object-contain opacity-80" />
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Welcome to IdeaLab
           </h1>
