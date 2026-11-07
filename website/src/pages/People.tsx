@@ -88,7 +88,7 @@ const { data: faculty, isLoading: facultyLoading } = useQuery({
           {idealabData.techGurus.map((m, i) => (
             <div key={i} className="bg-white rounded-xl shadow-md p-4 text-center">
               <img
-                src={`/ppt-images/slide14_img${[1,5,6,7,8][i % 5]}.png`}
+                src={`/ppt-images/sir_${(i % 6) + 1}.png`}
                 alt={m.name}
                 className="w-16 h-16 rounded-full object-cover mx-auto mb-2"
               />
