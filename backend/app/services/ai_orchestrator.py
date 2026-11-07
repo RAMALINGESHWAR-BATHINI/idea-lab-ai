@@ -15,6 +15,14 @@ from __future__ import annotations
 
 import asyncio
 import re as _re
+from urllib.parse import urlparse
+
+_RESEARCH_STATUSES = {
+    "MODEL_ONLY": "MODEL_ONLY",
+    "SEARCH_FALLBACK": "SEARCH_FALLBACK",
+    "GROUNDED": "GROUNDED",
+    "FAILED": "FAILED",
+}
 
 _MODE_SWITCH_PATTERNS = [
     (_re.compile(r"switch\s+to\s+gemini|hey\s+gemini|hi\s+gemini|^gemini$|use\s+gemini", _re.I), "gemini"),
@@ -61,8 +69,25 @@ from app.security.rbac import readable_levels
 
 logger = get_logger(__name__)
 
-MAX_TURNS = 10
-AI_REQUEST_TIMEOUT = 60
+def _validate_url(url: str) -> bool:
+    """Validate that a URL is a safe HTTP/HTTPS URL."""
+    if not url or not isinstance(url, str):
+        return False
+    try:
+        parsed = urlparse(url)
+        if parsed.scheme not in ("http", "https"):
+            return False
+        if not parsed.netloc:
+            return False
+        # Reject localhost and private IPs.
+        host = parsed.hostname or ""
+        if host in ("localhost", "127.0.0.1", "0.0.0.0", "::1"):
+            return False
+        if host.startswith("192.168.") or host.startswith("10.") or host.startswith("172."):
+            return False
+        return True
+    except Exception:
+        return False
 
 # Tools available to anonymous visitors (no permission-gated actions).
 _ANONYMOUS_TOOLS = frozenset(
@@ -524,6 +549,7 @@ Rules:
                     "ai_available": True,
                     "mode": mode,
                     "behavior_policy": behavior_policy,
+                    "research_status": research_status,
                 }
 
         # Check for pending search action + confirmation.
@@ -603,6 +629,7 @@ Rules:
 
         # Auto-search: in Gemini mode, search for current-info requests.
         search_sources = []
+        research_status = "MODEL_ONLY"
         if channel == "voice" and mode == "gemini" and _SEARCH_INTENT_PATTERNS.search(message):
             search_query = message
             # If message is a short follow-up, use last search context.
@@ -628,11 +655,15 @@ Rules:
                 if results:
                     search_context = "Web search results:\n"
                     for r in results:
+                        if not _validate_url(r.url):
+                            continue
                         search_context += f"- {r.title}: {r.snippet or ''} (URL: {r.url})\n"
                         search_sources.append({"url": r.url, "title": r.title})
-                    messages.append(ChatTurn(role="user", content=search_context))
-                    if conversation is not None:
-                        conversation.pending_action = {"type": "search", "query": search_query}
+                    if search_sources:
+                        messages.append(ChatTurn(role="user", content=search_context))
+                        if conversation is not None:
+                            conversation.pending_action = {"type": "search", "query": search_query}
+                        research_status = "SEARCH_FALLBACK"
             except Exception as exc:
                 logger.warning("auto_search_failed", error=str(exc))
 
@@ -731,6 +762,7 @@ Rules:
                     "ai_available": True,
                     "mode": mode,
                     "behavior_policy": behavior_policy,
+                    "research_status": research_status,
                 }
 
         all_sources: list[dict] = []
@@ -761,6 +793,7 @@ Rules:
                     "ai_available": True,
                     "mode": mode,
                     "behavior_policy": behavior_policy,
+                    "research_status": research_status,
                 }
 
             # Execute tool calls.
@@ -844,6 +877,7 @@ Rules:
                     "ai_available": True,
                     "mode": mode,
                     "behavior_policy": behavior_policy,
+                    "research_status": research_status,
                 }
         await self._save_message(
             conversation,
