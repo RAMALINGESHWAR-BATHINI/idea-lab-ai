@@ -126,7 +126,7 @@ function EquipmentCard({ equipment }: { equipment: Equipment }) {
         <p className="text-sm text-gray-600 mt-3 line-clamp-3">{equipment.description}</p>
       )}
       {equipment.location && (
-        <p className="text-sm text-gray-500 mt-2">📍 {equipment.location}</p>
+        <p className="text-sm text-gray-500 mt-2">Location: {equipment.location}</p>
       )}
       {equipment.quantity !== null && (
         <p className="text-sm text-gray-500 mt-1">Quantity: {equipment.quantity}</p>

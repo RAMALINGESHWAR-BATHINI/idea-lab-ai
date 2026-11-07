@@ -100,9 +100,9 @@ export function Projects() {
             >
               <h3 className="font-bold text-lg text-gray-900 mb-2">{p.name}</h3>
               <div className="text-sm text-gray-600 space-y-1 mb-3">
-                <p>👤 {p.students}</p>
-                <p>📅 {p.date}</p>
-                <p>💰 {p.amount}</p>
+                <p>Students: {p.students}</p>
+                <p>Date: {p.date}</p>
+                <p>Amount: {p.amount}</p>
               </div>
               <span
                 className={`px-2 py-1 text-xs rounded-full ${

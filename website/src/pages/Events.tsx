@@ -137,11 +137,11 @@ const { data: events, isLoading, error } = useQuery({
                   </span>
                 </div>
                 <div className="text-sm text-gray-500 space-y-1">
-                  <p>📅 {e.date}</p>
-                  <p>👥 {e.stakeholders}</p>
-                  {e.participants > 0 && (
-                    <p>🎓 {e.participants} participants</p>
-                  )}
+                   <p>Date: {e.date}</p>
+                   <p>Stakeholders: {e.stakeholders}</p>
+                   {e.participants > 0 && (
+                     <p>Participants: {e.participants}</p>
+                   )}
                 </div>
               </div>
             ))}
@@ -184,8 +184,8 @@ function EventCard({ event }: { event: Event }) {
         {event.description || "No description available."}
       </p>
       <div className="text-sm text-gray-500 space-y-1">
-        <p>📅 {formatDate(event.starts_at)}</p>
-        {event.venue && <p>📍 {event.venue}</p>}
+        <p>Date: {formatDate(event.starts_at)}</p>
+        {event.venue && <p>Venue: {event.venue}</p>}
         {event.registration_url && (
           <p className="text-primary-600 font-medium">Register →</p>
         )}

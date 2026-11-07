@@ -6,22 +6,22 @@ export function Home() {
     {
       title: "Event Management",
       description: "Create, schedule, and manage IdeaLab events, workshops, and hackathons.",
-      icon: "📅",
+      icon: "Event Management",
     },
     {
       title: "Project Showcase",
       description: "Browse student projects, view prototypes, and track development milestones.",
-      icon: "🚀",
+      icon: "Project Showcase",
     },
     {
       title: "AI Assistant",
       description: "Get help with ideation, research, and project development through AI.",
-      icon: "🤖",
+      icon: "AI Assistant",
     },
     {
       title: "Equipment Booking",
       description: "Reserve IdeaLab equipment and facilities for your projects.",
-      icon: "🔧",
+      icon: "Equipment Booking",
     },
   ];
 

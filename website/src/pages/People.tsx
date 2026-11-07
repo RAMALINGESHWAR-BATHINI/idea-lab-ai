@@ -72,7 +72,7 @@ const { data: faculty, isLoading: facultyLoading } = useQuery({
           {idealabData.executiveBoard.map((m, i) => (
             <div key={i} className="bg-white rounded-xl shadow-md p-6 text-center">
               <div className="w-16 h-16 rounded-full bg-secondary-100 flex items-center justify-center text-2xl mx-auto mb-3">
-                👤
+                {m.name.charAt(0)}
               </div>
               <h3 className="font-bold text-lg text-gray-900">{m.name}</h3>
               <p className="text-sm text-secondary-600 font-medium">{m.role}</p>
@@ -83,7 +83,7 @@ const { data: faculty, isLoading: facultyLoading } = useQuery({
       </section>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Tech Gurus</h2>
+        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Faculty & Mentors</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {idealabData.techGurus.map((m, i) => (
             <div key={i} className="bg-white rounded-xl shadow-md p-4 text-center">
@@ -106,52 +106,8 @@ const { data: faculty, isLoading: facultyLoading } = useQuery({
         </div>
       </section>
 
-      <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Faculty & Mentors</h2>
-          {facultyLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="h-48 bg-gray-300 rounded-lg animate-pulse"></div>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {faculty?.map((f) => (
-                <PersonCard key={f.id} person={f} />
-              ))}
-            </div>
-          )}
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">IdeaLab Members</h2>
-          {membersLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="h-48 bg-gray-300 rounded-lg animate-pulse"></div>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {members?.map((m) => (
-                <MemberCard key={m.id} member={m} />
-              ))}
-            </div>
-          )}
-        </section>
-
-        {staff && staff.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Staff</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {staff.map((s) => (
-                <PersonCard key={s.id} person={s as unknown as Faculty} />
-              ))}
-            </div>
-          </section>
-        )}
-      </div>
     </div>
+  </div>
   );
 }
 
@@ -167,9 +123,9 @@ function PersonCard({ person }: { person: Faculty | Staff }) {
             className="w-16 h-16 rounded-full object-cover"
           />
         ) : (
-          <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center text-2xl">
-            👤
-          </div>
+            <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center text-2xl">
+              {person.full_name.charAt(0)}
+            </div>
         )}
         <div className="flex-1">
           <h3 className="font-bold text-lg text-gray-900">{person.full_name}</h3>

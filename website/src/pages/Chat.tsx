@@ -130,7 +130,6 @@ export function Chat() {
         <div className="flex-1 overflow-y-auto px-6 py-6 space-y-4">
           {messages.length === 0 ? (
             <div className="text-center py-12 text-gray-500">
-              <div className="text-4xl mb-4">🤖</div>
               <p className="mb-2">
                 Hello! I'm the IdeaLab AI assistant. How can I help you today?
               </p>
