@@ -102,10 +102,17 @@ export function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Join the IdeaLab Community
+      <section className="py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <img src="/ppt-images/gcet-logo.png" alt="" className="h-10 object-contain opacity-80" />
+            <img src="/ppt-images/naac-logo.png" alt="" className="h-10 object-contain opacity-80" />
+            <img src="/ppt-images/idealab-logo.png" alt="" className="h-10 object-contain opacity-80" />
+            <img src="/ppt-images/iqac-logo.png" alt="" className="h-10 object-contain opacity-80" />
+            <img src="/ppt-images/aicte-idea-lab-logo.png" alt="" className="h-10 object-contain opacity-80" />
+          </div>
+        </div>
+      </section>
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Whether you're a student with a passion for building, a faculty member
