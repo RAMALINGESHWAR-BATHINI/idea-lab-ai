@@ -180,15 +180,10 @@ export function About() {
           </ul>
         </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Partners & Accreditation
-          </h2>
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            <img src="/ppt-images/naac-logo.png" alt="NAAC" className="h-16 object-contain" />
-            <img src="/ppt-images/aicte-idea-lab-logo.png" alt="AICTE IDEA Lab" className="h-16 object-contain" />
-          </div>
-        </section>
+        <div className="flex flex-wrap items-center justify-center gap-6 mt-8">
+          <img src="/ppt-images/slide10_img1.png" alt="" className="h-12 object-contain opacity-80" />
+          <img src="/ppt-images/geethanjali-logo.png" alt="" className="h-12 object-contain opacity-80" />
+        </div>
 
         <section>
           <p className="text-gray-700 leading-relaxed">
