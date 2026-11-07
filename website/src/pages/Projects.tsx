@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api/client";
 import { Link } from "react-router-dom";
+import pptData from "../data/events-projects.json";
 
 interface Project {
   id: string;
@@ -19,7 +20,7 @@ interface Project {
 }
 
 export function Projects() {
-const { data: projects, isLoading, error } = useQuery({
+  const { data: projects, isLoading, error } = useQuery({
     queryKey: ["projects"],
     queryFn: () => api.get<Project[]>("/content/projects"),
   });
@@ -81,6 +82,39 @@ const { data: projects, isLoading, error } = useQuery({
             ))}
           </div>
         )}
+
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+            IDEA Lab Project Budget Summary (from AICTE IDEA Lab GCET)
+          </h2>
+          <p className="text-gray-600 mb-4">
+            Total sanctioned: {pptData.totalSanctioned} | Total received: {pptData.totalReceived}
+          </p>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white rounded-xl shadow-md">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Student(s)</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Project Name</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Amount</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {pptData.projects.map((p: any, i: number) => (
+                  <tr key={i} className="hover:bg-gray-50">
+                    <td className="px-4 py-3 text-sm text-gray-900 whitespace-nowrap">{p.date}</td>
+                    <td className="px-4 py-3 text-sm text-gray-700">{p.students}</td>
+                    <td className="px-4 py-3 text-sm text-gray-700">{p.name}</td>
+                    <td className="px-4 py-3 text-sm text-gray-500">{p.amount}</td>
+                    <td className="px-4 py-3 text-sm text-gray-500">{p.status}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
       </div>
     </div>
   );
@@ -128,4 +162,3 @@ function ProjectCard({ project }: { project: Project }) {
     </Link>
   );
 }
-

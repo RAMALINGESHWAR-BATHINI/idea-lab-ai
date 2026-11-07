@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api/client";
 import { Link } from "react-router-dom";
+import pptData from "../data/events-projects.json";
 
 interface Event {
   id: string;
@@ -95,6 +96,34 @@ const { data: events, isLoading, error } = useQuery({
               ))}
             </div>
           )}
+        </section>
+
+        <section className="mt-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+            IDEA Lab Activities (from AICTE IDEA Lab GCET)
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white rounded-xl shadow-md">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Programme</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Stakeholders</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Participants</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {pptData.events.map((e, i) => (
+                  <tr key={i} className="hover:bg-gray-50">
+                    <td className="px-4 py-3 text-sm text-gray-900 whitespace-nowrap">{e.date}</td>
+                    <td className="px-4 py-3 text-sm text-gray-700">{e.name}</td>
+                    <td className="px-4 py-3 text-sm text-gray-500">{e.stakeholders}</td>
+                    <td className="px-4 py-3 text-sm text-gray-500">{e.participants || "-"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </section>
       </div>
     </div>
