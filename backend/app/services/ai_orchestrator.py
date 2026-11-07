@@ -17,7 +17,7 @@ import asyncio
 import re as _re
 
 _MODE_SWITCH_PATTERNS = [
-    (_re.compile(r"switch\s+to\s+gemini|hey\s+gemini|use\s+gemini|^gemini$", _re.I), "gemini"),
+    (_re.compile(r"switch\s+to\s+gemini|hey\s+gemini|hi\s+gemini|^gemini$|use\s+gemini", _re.I), "gemini"),
     (_re.compile(r"switch\s+to\s+idealab|hey.*switch\s+to\s+idealab|use\s+idealab", _re.I), "idealab"),
     (_re.compile(r"use\s+auto\s+mode|auto\s+mode", _re.I), "auto_policy"),
     (_re.compile(r"ask\s+(me\s+)?when\s+uncertain|ask\s+when\s+uncertain", _re.I), "ask_policy"),
