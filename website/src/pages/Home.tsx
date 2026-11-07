@@ -27,6 +27,18 @@ export function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
+      <section className="py-8 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <img src="/ppt-images/gcet-logo.png" alt="" className="h-10 object-contain opacity-80" />
+            <img src="/ppt-images/naac-logo.png" alt="" className="h-10 object-contain opacity-80" />
+            <img src="/ppt-images/idealab-logo.png" alt="" className="h-10 object-contain opacity-80" />
+            <img src="/ppt-images/iqac-logo.png" alt="" className="h-10 object-contain opacity-80" />
+            <img src="/ppt-images/aicte-idea-lab-logo.png" alt="" className="h-10 object-contain opacity-80" />
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <img
@@ -35,7 +47,8 @@ export function Home() {
             className="mx-auto mb-6 h-24"
           />
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Welcome to IdeaLab AI
+            Welcome to IdeaLab
+          </h1>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             AICTE IDEA Lab at {idealabData.college} — fostering innovation
@@ -98,18 +111,6 @@ export function Home() {
                 />
               )
             )}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            <img src="/ppt-images/gcet-logo.png" alt="" className="h-10 object-contain opacity-80" />
-            <img src="/ppt-images/naac-logo.png" alt="" className="h-10 object-contain opacity-80" />
-            <img src="/ppt-images/idealab-logo.png" alt="" className="h-10 object-contain opacity-80" />
-            <img src="/ppt-images/iqac-logo.png" alt="" className="h-10 object-contain opacity-80" />
-            <img src="/ppt-images/aicte-idea-lab-logo.png" alt="" className="h-10 object-contain opacity-80" />
           </div>
         </div>
       </section>
