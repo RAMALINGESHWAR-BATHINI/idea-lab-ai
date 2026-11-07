@@ -72,7 +72,7 @@ const { data: faculty, isLoading: facultyLoading } = useQuery({
           {idealabData.executiveBoard.map((m, i) => (
             <div key={i} className="bg-white rounded-xl shadow-md p-6 text-center">
               <img
-                src={`/ppt-images/sir_${i + 1}.png`}
+                src={`/ppt-images/sir_${i + 4}.png`}
                 alt={m.name}
                 className="w-16 h-16 rounded-full object-cover mx-auto mb-3"
               />
