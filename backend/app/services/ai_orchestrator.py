@@ -67,6 +67,9 @@ from app.services.tools import (
 )
 from app.security.rbac import readable_levels
 
+AI_REQUEST_TIMEOUT = 60.0
+MAX_TURNS = 5
+
 logger = get_logger(__name__)
 
 def _validate_url(url: str) -> bool:

@@ -30,8 +30,7 @@ export function Home() {
       
 
       <section className="py-20 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
             <img src="/ppt-images/gcet-logo.png" alt="" className="h-22 object-contain opacity-80" />
             <img src="/ppt-images/naac-logo.png" alt="" className="h-22 object-contain opacity-80" />
             <img
@@ -41,7 +40,7 @@ export function Home() {
             />
             <img src="/ppt-images/iqac-logo.png" alt="" className="h-22 object-contain opacity-80" />
             <img src="/ppt-images/iic-logo.png" alt="" className="h-22 object-contain opacity-80" />
-          </div>
+        </div>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Welcome to IdeaLab
           </h1>
@@ -66,7 +65,6 @@ export function Home() {
               Ask the AI Assistant
             </Link>
           </div>
-        </div>
       </section>
 
       <section className="py-16 bg-white">
